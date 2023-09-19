@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         val displayTextView = findViewById<TextView>(R.id.textDisplay)
 
         /* Step 1: Populate this array */
-        val numberArray = IntArray(50)
-        val tempArray = Array<Int>(50)
+        //val numberArray = IntArray(50)
+        val tempArray = arrayOf<Int>(50)
 
         for ( i in 0 .. 50 ) {
 
@@ -23,19 +23,18 @@ class MainActivity : AppCompatActivity() {
             tempArray[i] = i * 2
         }
 
-        for ( i in 0 .. 50 ) {
+        //for ( i in 0 .. 50 ) {
 
             //val numberArray = IntArray(50)
-            numberArray[i] = i * 2
-        }
-
+            //numberArray[i] = i * 2
+        //}
 
 
         /* Step 2: Create adapter to display items from array in Spinner */
 
         var temp = 0
 
-        val numAdapter = ArrayAdapter ( this, android.R.layout.simple_dropdown_item_1line, temp);
+        val numAdapter = ArrayAdapter ( this, android.R.layout.simple_dropdown_item_1line, tempArray);
 
         spinner.adapter = numAdapter
 
