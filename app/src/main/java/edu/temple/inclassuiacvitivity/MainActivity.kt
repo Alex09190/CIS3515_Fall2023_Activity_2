@@ -15,6 +15,13 @@ class MainActivity : AppCompatActivity() {
 
         /* Step 1: Populate this array */
         val numberArray = IntArray(50)
+        val tempArray = Array<Int>(50)
+
+        for ( i in 0 .. 50 ) {
+
+            //val numberArray = IntArray(50)
+            tempArray[i] = i * 2
+        }
 
         for ( i in 0 .. 50 ) {
 
@@ -25,7 +32,14 @@ class MainActivity : AppCompatActivity() {
 
 
         /* Step 2: Create adapter to display items from array in Spinner */
-        spinner.adapter =
+
+        var temp = 0
+
+        val numAdapter = ArrayAdapter ( this, android.R.layout.simple_dropdown_item_1line, temp);
+
+        spinner.adapter = numAdapter
+
+
 
             //ArrayAdapter...
 
