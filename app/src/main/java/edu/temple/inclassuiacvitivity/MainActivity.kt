@@ -23,46 +23,30 @@ class MainActivity : AppCompatActivity() {
             //val numberArray = IntArray(50)
             tempArray[i] = i * 2
         }
-
         //for ( i in 0 .. 50 ) {
-
             //val numberArray = IntArray(50)
             //numberArray[i] = i * 2
         //}
 
-
         /* Step 2: Create adapter to display items from array in Spinner */
-
         //var temp = 0
-
         val numAdapter = ArrayAdapter ( this, android.R.layout.simple_dropdown_item_1line, tempArray);
-
         spinner.adapter = numAdapter
 
-
-
             //ArrayAdapter...
-
-
         // Step 3: Change TextView's text size to the number selected in the Spinner */
-
-
         spinner.onItemSelectedListener = object: OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long)
-                { p0?.run { val color = getItemAtPosition(p2).toString()
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                p0?.run {
                         val size = getItemAtPosition(p2).toString()
                         displayTextView.textSize = size.toFloat()
                         }
                 }
-
-
             //override fun OnNothingSelected (p0 : AdapterView<*>?) {p0?.setSelection(0)}
             //public abstract fun onNothingSelected(p0: AdapterView<*>!): Unit defined in android.widget.AdapterView.OnItemSelectedListener
             override fun onNothingSelected(p0: AdapterView<*>?)
                 {
                     displayTextView.textSize = "0".toFloat()
-                //Toast.makeText(  , "Please select an item", Toast.LENGTH_SHORT).show()
-                //showToast(message = "Nothing selected")
                 }
 
 
